@@ -19,13 +19,8 @@ function App() {
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Generate a random username if not set
-  useEffect(() => {
-    if (!username) {
-      const randomName = `User_${Math.floor(Math.random() * 1000)}`;
-      setUsername(randomName);
-    }
-  }, [username]);
+  // We no longer generate random usernames
+  // Users will enter their own name
 
   // Auto-scroll to the bottom of messages
   useEffect(() => {
@@ -140,7 +135,7 @@ function App() {
           <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Join Chat</h2>
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
-              Username
+              Please enter your name
             </label>
             <input
               id="username"
@@ -148,8 +143,9 @@ function App() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-              placeholder="Enter your username..."
+              placeholder="Your name..."
               autoFocus
+              required
             />
           </div>
           <button
@@ -157,7 +153,7 @@ function App() {
             disabled={!username.trim()}
             className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition disabled:bg-gray-400"
           >
-            Join
+            Join Chat
           </button>
         </div>
       </div>
