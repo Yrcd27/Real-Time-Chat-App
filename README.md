@@ -1,6 +1,6 @@
 <div align="center">
 
-# Real-Time Chat App
+# Real Time Chat Application 
 
 A simple real-time chat application built to learn WebSocket technology. Features user identification, timestamps, and emoji support. My personal project to understand bidirectional communication with React, TypeScript, and Node.js.
 
